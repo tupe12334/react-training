@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ToDoItem() {
+function ToDoItem(props) {
     return (
         <div className="ToDoItem">
-            <input type="checkbox" id="first"></input>
-            <label for="first">place hoder here </label>
+            <input type="checkbox" id={props.Task.ItemText} checked={props.Task.Done}></input>
+            <label for={props.Task.ItemText}>{props.Task.ItemText} </label>
         </div>
     )
 }
