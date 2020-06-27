@@ -16,7 +16,7 @@ function App() {
 }
 
 
-export function handleChange(event) {
+export function change(event) {
   this.setState({value: event.target.value});
 }
 

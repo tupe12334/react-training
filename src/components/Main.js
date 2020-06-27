@@ -18,7 +18,7 @@ function Main() {
                 <label for="therd">therd</label>
             </div>
             <div>
-                <input type="text" id="nameInput" onChange={change()}></input>
+                <input type="text" id="nameInput" onChange={change(event)}></input>
                 <label for="nameInput">enter your name</label>
             </div>
         </div>
