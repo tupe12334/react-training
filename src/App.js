@@ -15,12 +15,7 @@ function App() {
     )
 }
 
-
-export function change(event) {
-  this.setState({value: event.target.value});
-}
-
-export let UserName="hi";
+export let UserName="ofek";
 
 
 export default App;

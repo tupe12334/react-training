@@ -1,25 +1,26 @@
 import React from 'react';
-import {change, UserName} from '../App';
+
+import ToDoItem from './ToDoItem';
 
 function Main() {
-    
+    const now = new Date()
+    const alertTime = () => alert(now.getHours() % 24)
+
     return (
         <div className="MainCon">
-            <div>
-                <input type="checkbox" id="first"></input>
-                <label for="first">first</label>
+            <div className="ToDoList">
+                <ToDoItem />
+                <ToDoItem />
+                <ToDoItem />
             </div>
+
+
             <div>
-                <input type="checkbox" id="second"></input>
-                <label for="second">second</label>
-            </div>
-            <div>
-                <input type="checkbox" id="therd"></input>
-                <label for="therd">therd</label>
-            </div>
-            <div>
-                <input type="text" id="nameInput" onChange={change(event)}></input>
+                <input type="text" id="nameInput" onChange={alertTime}></input>
                 <label for="nameInput">enter your name</label>
+            </div>
+            <div>
+                <p>now is {now.getHours() % 24}</p>
             </div>
         </div>
 
