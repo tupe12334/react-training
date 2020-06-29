@@ -12,7 +12,10 @@
   text-align: center;
   justify-content: center;
 }
-
+.SideBar{
+  width: 50%;
+  position: fixed
+}
 .MainCon{
 }
 
