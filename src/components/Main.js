@@ -13,7 +13,7 @@ class Main extends React.Component {
         }
     }
     render() {
-        TaskCom = this.state.todos.map(TaskObject => <ToDoItem key={TaskObject.id} ItemText={TaskObject.text} Done={TaskObject.checked} />)
+        let TaskCom = this.state.todos.map(TaskObject => <ToDoItem key={TaskObject.id} ItemText={TaskObject.text} Done={TaskObject.checked} />)
         return (
             <div className="MainCon">
                 <div className="ToDoList">
