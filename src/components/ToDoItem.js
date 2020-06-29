@@ -1,4 +1,6 @@
 import React from 'react';
+import Divider from '@material-ui/core/Divider';
+
 class ToDoItem extends React.Component{
     constructor(){
         super()
@@ -19,7 +21,8 @@ class ToDoItem extends React.Component{
             <div className="ToDoItem">
                 <input type="checkbox" id={this.props.ItemText} defaultChecked={this.props.Done}></input>
                 <label htmlFor={this.props.ItemText}>{this.props.ItemText} {addedText} </label>
-                <hr></hr>
+                <Divider/>
+
             </div>
         )
     }

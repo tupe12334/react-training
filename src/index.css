@@ -13,17 +13,27 @@
   justify-content: center;
 }
 .SideBar{
-  width: 50%;
-  position: fixed
+  grid-area: sidebar;
 }
 .MainCon{
 }
-
+.MainCon{
+  display: grid;
+  grid-template-columns: auto 100px;
+  grid-template-areas: 
+  "main sidebar";
+}
+.SideBarText{
+  text-align: right;
+}
 .ToDoList{
+  display: grid;
+  grid-area: main;
 }
 
 .ToDoItem{
 margin: 10px;
+
 }
 
 .HeaderClass{

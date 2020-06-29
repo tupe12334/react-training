@@ -29,7 +29,6 @@ class Main extends React.Component {
                 <div className="SideBar">
                 <Sidebar items={items} />
                 </div>
-                
             </div>
 
         )

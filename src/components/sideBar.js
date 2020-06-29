@@ -9,7 +9,7 @@ function Sidebar({ items }) {
       <List disablePadding dense>
         {items.map(({ label, name, ...rest }) => (
           <ListItem key={name} button {...rest}>
-            <ListItemText>{label}</ListItemText>
+            <ListItemText className="SideBarText">{label}</ListItemText>
           </ListItem>
         ))}
       </List>
