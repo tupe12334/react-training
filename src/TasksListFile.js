@@ -2,7 +2,7 @@ const TasksList =[
     {
         id:1,
         text: "ofek",
-        checked:"checked"
+        checked:"true"
     },
     {
         id:2,
@@ -13,7 +13,12 @@ const TasksList =[
         id:3,
         text : "hi",
         checked:""
-    }
+    },
+    {
+        id:4,
+        text : "mc",
+        checked:"true"
+    },
 ]
 
 export default TasksList

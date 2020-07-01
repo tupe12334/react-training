@@ -10,28 +10,44 @@ class Main extends React.Component {
     this.state = {
       todos: TaskList,
     };
+    this.checkBoxChange = this.checkBoxChange.bind(this);
   }
+  checkBoxChange(id) {
+    console.log("work", id);
+    this.setState((prevState) => {
+      const updatedTodos = prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.checked = !todo.checked;
+          todo.ItemText = prevState.ItemText + "yes";
+        }
+        return todo;
+      });
+      return {
+        todos: updatedTodos,
+      };
+    });
+  }
+
   render() {
     const items = [
       { name: "home", label: "test" },
       { name: "billing", label: "Billing" },
       { name: "settings", label: "Settings" },
     ];
-    let TaskCom = this.state.todos.map((TaskObject) => (
-      
+    const TaskCom = this.state.todos.map((TaskObject) => (
       <ToDoItem
         key={TaskObject.id}
+        id={TaskObject.id}
         ItemText={TaskObject.text}
         Done={TaskObject.checked}
+        handleChange={this.checkBoxChange}
       />
     ));
     return (
       <div className="MainCon">
-
-
         <div className="ToDoList">{TaskCom}</div>
         <div className="SideBar">
-          <Sidebar items={items} />
+          <Sidebar items={items}/>
         </div>
       </div>
     );
