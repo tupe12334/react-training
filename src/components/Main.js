@@ -3,12 +3,14 @@ import React from "react";
 import ToDoItem from "./ToDoItem";
 import TaskList from "../TasksListFile";
 import Sidebar from "./sideBar";
+import Conditional from "./Conditional";
 
 class Main extends React.Component {
   constructor() {
     super();
     this.state = {
       todos: TaskList,
+      isLoading: true,
     };
     this.checkBoxChange = this.checkBoxChange.bind(this);
   }
@@ -26,6 +28,11 @@ class Main extends React.Component {
         todos: updatedTodos,
       };
     });
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 1500);
   }
 
   render() {
@@ -45,10 +52,17 @@ class Main extends React.Component {
     ));
     return (
       <div className="MainCon">
-        <div className="ToDoList">{TaskCom}</div>
-        <div className="SideBar">
-          <Sidebar items={items}/>
-        </div>
+        {this.state.isLoading ? (
+          <h1>loding</h1>
+        ) : (
+          <div>
+            <div className="ToDoList">{TaskCom}</div>
+            <div className="SideBar">
+              <Sidebar items={items} />
+            </div>
+            <Conditional isLoading={this.state.isLoading} />
+          </div>
+        )}
       </div>
     );
   }

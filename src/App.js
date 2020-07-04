@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Main from './components/Main'
 import Sidebar from './components/sideBar'
+import Loginout from './components/loginout'
 
 class App extends React.Component{
     constructor(){
@@ -35,11 +36,10 @@ class App extends React.Component{
         }
         return (
             <div>
-                <button value="hi" onClick={clickHandeler}>text</button>
-                <div>{this.state.screens[this.state.count]}</div>
                 <Header/>
                 <Main/>
                 <Footer/>
+                <Loginout/>
             </div>
         )
     }
